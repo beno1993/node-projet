@@ -18,7 +18,7 @@ const createProductDetail = (data, callback) => {
     (err, res) => {
       if (err) {
         callback(err, NULL);
-      } else(NULL, res);
+      } else NULL, res;
     }
   );
 };
@@ -27,7 +27,7 @@ const readProductDetail = (callback) => {
   db.query('SELECT * FROM productdetails', (err, res) => {
     if (err) {
       callback(err, NULL);
-    } else(NULL, res);
+    } else NULL, res;
   });
 };
 
@@ -35,7 +35,7 @@ const readProductDetailById = (id, callback) => {
   db.query('SELECT * FROM `productdetails WHERE `id`=?', [id], (err, res) => {
     if (err) {
       callback(err, NULL);
-    } else(NULL, res);
+    } else NULL, res;
   });
 };
 
@@ -46,7 +46,7 @@ const editProductDetail = (data, callback) => {
     (err, res) => {
       if (err) {
         callback(err, NULL);
-      } else(NULL, res);
+      } else NULL, res;
     }
   );
 };
@@ -55,14 +55,14 @@ const removeProductDetail = (id, callback) => {
   db.query('DELETE * FROM `productdetails WHERE `id`=?', [id], (err, res) => {
     if (err) {
       callback(err, NULL);
-    } else(NULL, res);
+    } else NULL, res;
   });
 };
 
-module.exports {
-    createProductDetail,
-    readProductDetail,
-    readProductById,
-    editProductDetail,
-    removeProductDetail,
-}
+module.exports = {
+  createProductDetail,
+  readProductDetail,
+  readProductDetailById,
+  editProductDetail,
+  removeProductDetail,
+};
